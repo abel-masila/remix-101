@@ -4,8 +4,8 @@ export const action = async ({ request }) => {
   const title = form.get('title');
   const body = form.get('body');
   const post = { title, body };
-  console.log(post);
-  return redirect('/posts');
+  //submit post to database
+  // return redirect('/posts');
 };
 
 function New() {
@@ -33,6 +33,16 @@ function New() {
         </form>
       </div>
     </>
+  );
+}
+
+export function ErrorBoundary({ error }) {
+  console.log(error);
+  return (
+    <div>
+      <h1>Error</h1>
+      <pre>{error.message}</pre>
+    </div>
   );
 }
 
