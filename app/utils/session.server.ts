@@ -16,6 +16,15 @@ export async function login({ username, password }) {
   return user;
 }
 
+//register user
+
+export async function register({ username, password }) {
+  const passwordHash = await bcrypt.hash(password, 10);
+  return db.user.create({
+    data: { username, passwordHash },
+  });
+}
+
 //get session secret
 const sessionSecret = process.env.SESSION_SECRET;
 
