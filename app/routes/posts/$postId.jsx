@@ -1,4 +1,4 @@
-import { useParams } from 'remix';
+import { useParams, useLoaderData } from 'remix';
 
 function Post() {
   const params = useParams();
