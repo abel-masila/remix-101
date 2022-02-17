@@ -11,6 +11,7 @@ function validateBody(body) {
     return 'Body must be at least 3 characters long';
   }
 }
+
 export const action = async ({ request }) => {
   const form = await request.formData();
   const title = form.get('title');
