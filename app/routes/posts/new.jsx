@@ -5,9 +5,9 @@ export const action = async ({ request }) => {
   const form = await request.formData();
   const title = form.get('title');
   const body = form.get('body');
-  const post = { title, body };
+  const fields = { title, body };
   //submit post to database
-  const post = await db.post.create({ data: post });
+  const post = await db.post.create({ data: fields });
 
   return redirect(`/posts/${post.id}`);
 };
